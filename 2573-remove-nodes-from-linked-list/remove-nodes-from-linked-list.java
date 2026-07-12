@@ -13,7 +13,6 @@ class Solution {
         if(head==null || head.next==null) return head;
         ListNode rev=reverse(head);
         int max=Integer.MIN_VALUE;
-        display(rev);
         ListNode tmp=rev;
 
         ListNode dummy=new ListNode(-1);
@@ -42,10 +41,5 @@ class Solution {
         }
         return pre;
     }
-    public void display(ListNode head){
-        while(head!=null) {
-            System.out.print(head.val+" ");
-            head=head.next;
-        }
-    }
+
 }
