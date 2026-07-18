@@ -9,7 +9,7 @@ class Solution {
                 if(j<nums.length){
                      int tmp=nums[j];
                     nums[j]=nums[i];
-                    nums[i]=tmp;
+                nums[i]=tmp;
                 }
                
             }
