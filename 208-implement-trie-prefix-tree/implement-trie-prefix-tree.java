@@ -28,8 +28,8 @@ class Trie {
             if(!curr.h.containsKey(c)) return false;
             curr=curr.h.get(c);
         }
-        if(curr.isEnd==false) return false;
-        return true;
+        
+        return curr.isEnd;
     }
 
     
@@ -39,7 +39,8 @@ class Trie {
             if(!curr.h.containsKey(c)) return false;
             curr=curr.h.get(c);
         }
-        return true;    }   
+        return true;    
+    }   
 }
 
 /**
