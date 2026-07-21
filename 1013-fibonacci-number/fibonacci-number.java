@@ -18,6 +18,6 @@ class Solution {
             pre1=curr;
             
         }
-        return curr;
+        return pre1;
     }
 }
