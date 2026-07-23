@@ -1,6 +1,6 @@
 class Solution {
     public int minEatingSpeed(int[] piles, int h) {
-        if(piles[0]==805306368) return 3;
+        // if(piles[0]==805306368) return 3;
         int low=1;
         int high=Integer.MIN_VALUE;
         for(int i=0;i<piles.length;i++){
@@ -9,7 +9,7 @@ class Solution {
         int ans=high;
         while(low<=high){
             int mid=(low+high)/2;
-            int total=0;
+            long total=0;
             for(int i=0;i<piles.length;i++){
                 total+=(piles[i]+mid-1)/mid;
             }
