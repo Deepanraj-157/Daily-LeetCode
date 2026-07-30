@@ -18,7 +18,11 @@ class Solution {
             curr=1;
         }
         curr=curr+left+right;
-        if(curr==2 && lca==null) lca=root;
+        if(curr==2 && lca==null) {
+            lca=root;
+            return curr;
+        }
+
         return curr;
     }
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
