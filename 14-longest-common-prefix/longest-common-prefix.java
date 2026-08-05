@@ -10,12 +10,10 @@ class Solution {
             int j=0;
             System.out.print(c+" ");
             for(j=0;j<strs.length;j++){
-                if(strs[j].charAt(i)!=c) break;
+                if(strs[j].charAt(i)!=c) return res;
             }
             if(j==strs.length) res+=c;
-            else{
-                return res;
-            }
+   
 
         }
         return res;
