@@ -19,7 +19,6 @@ class Solution {
             else{
                 ans+=map.get(s.charAt(i-1));
             }
-            System.out.print(ans+" ");
         }
         if(map.get(s.charAt(s.length()-1))>map.get(s.charAt(s.length()-2))) return ans;
         ans+=map.get(s.charAt(s.length()-1));
