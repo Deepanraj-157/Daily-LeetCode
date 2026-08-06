@@ -1,6 +1,7 @@
 class Solution {
     public String intToRoman(int num) {
-        StringBuilder res = new StringBuilder();
+        // StringBuilder res = new StringBuilder();
+        String res="";
         LinkedHashMap<Integer,String> map=new LinkedHashMap<>();
         map.put(1000,"M");
         map.put(900,"CM");
@@ -17,12 +18,12 @@ class Solution {
         map.put(1,"I");
         for(int key:map.keySet()){
             while(num>=key){
-                res.append(map.get(key));
+                res+=(map.get(key));
                 num-=key;
             }
 
         }
-        return res.toString();        
+        return res;        
         
     }
 }
