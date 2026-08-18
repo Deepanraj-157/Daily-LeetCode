@@ -1,11 +1,10 @@
 class Solution {
-    HashSet<List<Integer>> list=new HashSet<>();
+    HashSet<List<Integer>> set=new HashSet<>();
     public void addElement(List<Integer> arr,int i,int[] nums){
         if(i==nums.length){
-            // Collections.sort(arr);
             List<Integer> newList=new ArrayList<>(arr);
             Collections.sort(newList);
-            list.add(new ArrayList<>(newList));
+            set.add(new ArrayList<>(newList));
             return;
         } 
         addElement(arr,i+1,nums);
@@ -18,6 +17,6 @@ class Solution {
         List<Integer> tmp=new ArrayList<>();
         addElement(tmp,0,nums);
         
-        return new ArrayList<>(list);     
+        return new ArrayList<>(set);     
     }
 }
