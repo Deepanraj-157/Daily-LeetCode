@@ -8,14 +8,13 @@ class Solution {
         addElement(arr,i+1,nums);
         arr.add(nums[i]);
         addElement(arr,i+1,nums);
-        // list.add(new ArrayList(arr));
         arr.remove(arr.size()-1);
         
     }
     public List<List<Integer>> subsets(int[] nums) {
         List<Integer> tmp=new ArrayList<>();
         addElement(tmp,0,nums);
-        return list;
+        return new ArrayList<>(list);
         
     }
 }
