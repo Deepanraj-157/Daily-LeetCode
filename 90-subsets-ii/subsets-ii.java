@@ -2,9 +2,7 @@ class Solution {
     HashSet<List<Integer>> set=new HashSet<>();
     public void addElement(List<Integer> arr,int i,int[] nums){
         if(i==nums.length){
-            List<Integer> newList=new ArrayList<>(arr);
-            // Collections.sort(newList);
-            set.add(new ArrayList<>(newList));
+            set.add(new ArrayList<>(arr));
             return;
         } 
         addElement(arr,i+1,nums);
