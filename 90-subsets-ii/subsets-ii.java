@@ -3,7 +3,7 @@ class Solution {
     public void addElement(List<Integer> arr,int i,int[] nums){
         if(i==nums.length){
             List<Integer> newList=new ArrayList<>(arr);
-            Collections.sort(newList);
+            // Collections.sort(newList);
             set.add(new ArrayList<>(newList));
             return;
         } 
@@ -15,6 +15,7 @@ class Solution {
     }
     public List<List<Integer>> subsetsWithDup(int[] nums) {
         List<Integer> tmp=new ArrayList<>();
+        Arrays.sort(nums);
         addElement(tmp,0,nums);
         
         return new ArrayList<>(set);     
