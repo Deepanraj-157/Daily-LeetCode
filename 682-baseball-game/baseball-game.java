@@ -1,0 +1,33 @@
+class Solution {
+    public int calPoints(String[] operations) {
+        Stack<Integer> st=new Stack<>();
+        for (String s : operations) {
+
+            if (s.equals("C")) {
+                st.pop();
+            }
+            else if (s.equals("D")) {
+                st.push(st.peek() * 2);
+            }
+            else if (s.equals("+")) {
+                int n1 = st.pop();
+                int n2 = st.pop();
+
+                st.push(n2);
+                st.push(n1);
+                st.push(n1 + n2);
+            }
+            else {
+                st.push(Integer.parseInt(s));
+            }
+        }
+
+        int sum=0;
+        while(!st.isEmpty()){
+            sum+=st.peek();
+            st.pop();
+        }
+        return sum;
+        
+    }
+}
