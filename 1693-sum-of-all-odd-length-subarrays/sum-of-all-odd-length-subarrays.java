@@ -8,7 +8,6 @@ class Solution {
                 sum+=arr[j];
                 if(len%2==1){
                     totalSum+=sum;
-                    System.out.print(sum+" ");
                 }
                 
                 len++;
