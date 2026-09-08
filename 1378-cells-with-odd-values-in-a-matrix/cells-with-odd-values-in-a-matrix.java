@@ -5,16 +5,14 @@ class Solution {
         for(int[] tmp:indices){
             int row=tmp[0];
             int col=tmp[1];
-            if(row>=0 && row<m){
             for(int i=0;i<n;i++){
                 matrix[row][i]++;
             }
-            }
-            if(col>=0 && col<n){
+
             for(int i=0;i<m;i++){
                 matrix[i][col]++;
             }
-            }
+            
         }
         int count=0;
         for(int i=0;i<m;i++){
