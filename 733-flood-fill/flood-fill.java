@@ -1,53 +1,47 @@
 class Solution {
     public int[][] floodFill(int[][] image, int sr, int sc, int color) {
-        if(image[sr][sc]==color) return image;
+        int row=image.length;
+        int col=image[0].length;
+        int[][] dirs=new int[][]{
+            {0,-1},
+            {-1,0},
+            {0,1},
+            {1,0}
+        };
+        boolean visited[][] = new boolean[row][col];
+        for(int i=0;i<row;i++){
+            Arrays.fill(visited[i],false);
+        }
         Queue<int[]> q=new LinkedList<>();
-        int rows=image.length;
-        int cols=image[0].length;
-        int c=image[sr][sc];
         q.offer(new int[]{sr,sc});
-        image[sr][sc]=color;
+        int pre=image[sr][sc];
+
         while(!q.isEmpty()){
             int size=q.size();
-            
             for(int i=0;i<size;i++){
                 int[] tmp=q.poll();
-                //up
-                if(tmp[0]-1>-1){
-                    if(image[tmp[0]-1][tmp[1]] == c){
-                        image[tmp[0]-1][tmp[1]]=color;
-                            q.offer(new int[]{tmp[0]-1,tmp[1]});
-                    }
-                                
+                int currRow=tmp[0];
+                int currCol=tmp[1];
+                if(!visited[currRow][currCol]){
+                    visited[currRow][currCol]=true;
+                    image[currRow][currCol]=color;
 
-                }
-                //down
-                if(tmp[0]+1<rows){
-                    if(image[tmp[0]+1][tmp[1]] == c){
-                        image[tmp[0]+1][tmp[1]]=color;
-                        q.offer(new int[]{tmp[0]+1,tmp[1]});
-                    }
+                    for(int[] dir:dirs){
+                        int newRow=currRow+dir[0];
+                        int newCol=currCol+dir[1];
+                        if(newRow>=0 && newRow<row && newCol>=0 && newCol<col){
+                            if(image[newRow][newCol]==pre)q.offer(new int[]{newRow,newCol});
+                        }
 
-                }
-                //right
-                if(tmp[1]+1<cols){
-                    if(image[tmp[0]][tmp[1]+1] == c){
-                        image[tmp[0]][tmp[1]+1]=color;
-                        q.offer(new int[]{tmp[0],tmp[1]+1});
                     }
-
-                }
-                //left
-                if(tmp[1]-1>-1){
-                    if(image[tmp[0]][tmp[1]-1] == c){
-                        image[tmp[0]][tmp[1]-1]=color;
-                        q.offer(new int[]{tmp[0],tmp[1]-1});
-                    }
-
+                    
                 }
             }
+
         }
         return image;
+
+
         
     }
 }
